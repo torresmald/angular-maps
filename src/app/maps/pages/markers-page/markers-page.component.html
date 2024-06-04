@@ -1,0 +1,18 @@
+<div #mapita id="map"></div>
+
+<ul class="list-group">
+
+    <li
+      class="list-group-item"
+      *ngFor="let marker of markers; let i = index"
+      [ngStyle]="{ 'background-color': marker.color }"
+      (dblclick)="onDeleteMarker(i)"
+      (click)="onFly(marker.marker)"
+    >
+      Marker: {{ i + 1 }}
+    </li>
+</ul>
+
+<button class="btn btn-primary" (click)="onCreateMarker()">
+  Añadir Marcador
+</button>

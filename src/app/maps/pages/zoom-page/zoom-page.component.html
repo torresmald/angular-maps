@@ -1,0 +1,13 @@
+<div #mapita id="map"></div>
+
+<div class="floating-range p-2">
+    <div class="floating-content">
+        <button class="btn btn-primary" (click)="onChangeZoom('minus')"> - </button>
+        <input type="range" class="form-range px-2" min="-2" max="14" [value]="zoom" #inputZoom (input)="zoomChanged(inputZoom.value)">
+        <button class="btn btn-primary" (click)="onChangeZoom('plus')"> + </button>
+    </div>
+    <div class="data">
+        <span>zoom: {{zoom | number : '2.2-2'}}</span>
+        <span>lat-lon {{lngLat}}</span>
+    </div>
+</div>
